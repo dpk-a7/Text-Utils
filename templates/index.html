@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = 'UTF-8'>
+    <title>Home</title>
+</head>
+<body>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<h1>Welcome to text analyser!</h1>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<h3>Enter your text:</h3>
+<form action = '/analyze', method = "post"> 
+{% csrf_token %}
+<textarea name= 'text' style= "margin: 0px; width:721px; height: 93px;"></textarea><br>
+<input type = "checkbox" name = "removepunc" >Remove Punctuation<br>
+<input type = "checkbox" name = "capitalizefirst" >Capitalize First Character<br>
+<input type = "checkbox" name = "spaceremover" >Space Remove<br>
+<input type = "checkbox" name = "newlineremove" >New Line Remove<br>
+<input type = "checkbox" name = "charcount" >Character Count<br>
+<button type = 'submit'>Analyze Text</button>
+</form>
+
+<p>{% csrf_token %}
+<h1>Input Text:</h1>
+<h3>
+<pre>{{input}}</pre>
+</h3>
+<br>
+<h1>Functions used:</h1>
+<h3>
+{{purpose}}
+</h3>
+<br>
+<br>
+<h1>Output Text:</h1>
+<h3>
+<pre>{{analyzed_text}}</pre>
+</h3>
+</p>
+</body>
+</html>
